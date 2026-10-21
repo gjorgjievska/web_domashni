@@ -1,0 +1,50 @@
+h1{
+    color: #690622;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+h2{
+    color: #dc0d47;
+    font-style: normal;
+    font-size: 36px;
+    text-align: left;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h3{
+    color: #e35b81;
+    font-style: normal;
+    text-align: left;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+@keyframes promena{
+    0% {background-color: #f6f6f7;}
+    50% {background-color: #845970;}
+    100% {background-color: #f305af;}
+}
+
+body {
+    animation: promena 10s ease-in-out infinite alternate;
+}
+
+summary {
+    cursor: pointer;
+    color: #690622;
+    background-color: #f8bbd0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.4s ease;
+}
+
+summary:hover {
+    background-color: #e35b81;
+}
+
+p {
+    font-size: 20px;
+}
