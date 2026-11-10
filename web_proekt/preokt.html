@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner App</title>
+    <link rel="stylesheet" href="proekt.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+    <div class="najava">
+
+        <a href="#" class="logo">TraveleR</a>
+
+        <div class="links">
+
+            <a href="#home">Почетна</a>
+            <a href=#trip-planner>Планирај го патувањето</a>
+            <a href="#destinations">Дестинации</a>
+            <a href="#gallery">Галерија</a>
+            <a href="#guide">Водич</a>
+            <a href="#survey">Анкета</a>
+            <a href="#login" class="login-btn">Најава</a>
+
+        </div>
+
+    </div>
+ </nav>
+   
+    <header>
+        <div class="header-content">
+       <h1><strong>TraveleR</strong></h1>
+       <image src="travel.jpg" alt="Travel Image" class="header-image">
+       <p>Добродојдовте во апликацијата TraveleR! Планирајте ги вашите патувања, истражувајте дестинации и управувајте со вашиот план за патување на едно место.</p>
+        </div>
+    </header>
+
+
+
+<section id="trip-planner">
+
+    <h2>Планирај го твоето патување</h2>
+    <p>Додавај дестинации, избирај буџет и пресметај ги трошоците.</p>
+
+
+    <div class="planner-box">
+
+        <h3>Додај нова дестинација</h3>
+
+        <form id="destination-form">
+
+            <label>Име на дестинација:</label>
+            <input type="text" id="city-name" placeholder="Пример: Прага" required>
+
+            <label>Цена по лице (€):</label>
+            <input type="number" id="city-price" min="1" placeholder="Пример: 180" required>
+
+            <label>Категорија:</label>
+            <select id="city-category" required>
+                <option value="">Избери категорија</option>
+                <option value="Градски одмор">Градски одмор</option>
+                <option value="Природа">Природа</option>
+                <option value="Море">Море</option>
+                <option value="Култура и историја">Култура и историја</option>
+            </select>
+
+            <button type="submit">Додај дестинација</button>
+
+        </form>
+
+    </div>
+
+
+
+    <div class="planner-box">
+
+        <h3>Филтрирај дестинации</h3>
+
+        <label>Максимален буџет (€):</label>
+        <input type="number" id="budget-filter" placeholder="Пример: 300">
+
+        <label>Категорија:</label>
+        <select id="category-filter">
+            <option value="">Сите категории</option>
+            <option value="Градски одмор">Градски одмор</option>
+            <option value="Природа">Природа</option>
+            <option value="Море">Море</option>
+            <option value="Култура и историја">Култура и историја</option>
+        </select>
+
+        <button type="button" id="filter-button">Филтрирај</button>
+        <button type="button" id="reset-button">Прикажи ги сите</button>
+
+    </div>
+
+
+
+    <div class="planner-box">
+
+        <h3>Мои дестинации</h3>
+
+        <div id="destination-list"></div>
+
+    </div>
+
+
+
+    <div class="planner-box">
+
+        <h3>Пресметај патни трошоци</h3>
+
+        <label>Избери дестинација:</label>
+        <select id="calculator-city">
+            <option value="">Избери дестинација</option>
+        </select>
+
+        <label>Број на патници:</label>
+        <input type="number" id="traveler-count" min="1" value="1">
+
+        <button type="button" id="calculate-button">Пресметај</button>
+
+        <p id="total-cost">Вкупна цена: 0 €</p>
+
+    </div>
+
+</section>
+
+
+
+<section id="destinations">
+
+    <h2>Популарни дестинации</h2>
+
+    <p>Започни ја твојата авантура за патување околу светот.</p>
+
+    <div class="destination">
+
+        <div class="destination-card">
+            <img src="paris.jpg" alt="Париз">
+            <h3>Париз</h3>
+            <p>Изгуби се во улиците на Париз, каде што секој агол крие приказна, секое светло буди романтика, а секое зајдисонце изгледа како уметничко дело..</p>
+        </div>
+
+        <div class="destination-card">
+            <img src="rome.jpg" alt="Рим">
+            <h3>Рим</h3>
+            <p>Во Рим, историјата не е само спомен од минатото – таа живее во секоја улица, секој плоштад и секој камен што раскажува приказна стара илјадници години.</p>
+        </div>
+
+        <div class="destination-card">
+            <img src="london.jpg" alt="Лондон">
+            <h3>Лондон</h3>
+            <p>Од кралски палати до модерни улици, Лондон е град во кој традицијата и современиот живот се спојуваат во една незаборавна авантура.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="gallery">
+
+    <h2>Галерија</h2>
+
+    <p>Откриј ги убавините на светот преку нашата галерија.</p>
+
+    <div class="gallery-container">
+
+        <div class="gallery-item" data-city="santorini">
+            <img src="santorini.jpg" alt="Санторини">
+            <h3>Санторини</h3>
+        </div>
+
+        <div class="gallery-item" data-city="venice">
+            <img src="venice.jpg" alt="Венеција">
+            <h3>Венеција</h3>
+        </div>
+
+        <div class="gallery-item" data-city="seoul">
+            <img src="seul.jpg" alt="Сеул">
+            <h3>Сеул</h3>
+        </div>
+
+        <div class="gallery-item" data-city="bali">
+            <img src="bali.jpg" alt="Бали">
+            <h3>Бали</h3>
+        </div>
+
+        <div class="gallery-item" data-city="kyoto">
+            <img src="kyoto.jpg" alt="Кјото">
+            <h3>Кјото</h3>
+        </div>
+
+        <div class="gallery-item" data-city="amalfi">
+            <img src="amalfi.jpg" alt="Амалфи">
+            <h3>Амалфи</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="guide">
+
+    <h2>Истражи ги градовите</h2>
+    <p>Избери град и откриј 10 места што мора да ги посетиш!</p>
+
+    <div class="guide-container">
+
+        <div class="guide-ticket" data-city="paris">
+            <img src="paris4.jpg" alt="Париз">
+            <h3>ПАРИЗ</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="rome">
+            <img src="rome4.jpg" alt="Рим">
+            <h3>РИМ</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="london">
+            <img src="london4.jpg" alt="Лондон">
+            <h3>ЛОНДОН</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="santorini">
+            <img src="santorini4.jpg" alt="Санторини">
+            <h3>САНТОРИНИ</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="venice">
+            <img src="venice4.jpg" alt="Венеција">
+            <h3>ВЕНЕЦИЈА</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="seoul">
+            <img src="seul4.jpg" alt="Сеул">
+            <h3>СЕУЛ</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="bali">
+            <img src="bali4.jpg" alt="Бали">
+            <h3>БАЛИ</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="kyoto">
+            <img src="kyoto4.jpg" alt="Кјото">
+            <h3>КЈОТО</h3>
+        </div>
+
+        <div class="guide-ticket" data-city="amalfi">
+            <img src="amalfi4.jpg" alt="Амалфи">
+            <h3>АМАЛФИ</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROZOREC SO PISMO -->
+
+<div id="guide-modal" class="guide-modal">
+
+    <div class="guide-letter">
+
+        <button type="button" id="close-guide">X</button>
+
+        <h2 id="guide-title"></h2>
+
+        <h3>10 работи што мора да ги видите</h3>
+
+        <ol id="guide-list"></ol>
+
+    </div>
+
+</div>
+
+<div id="destinationModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2 id="modalCityName"></h2>
+
+            <button type="button" id="closeModal" class="close-btn">
+                &times;
+            </button>
+
+        </div>
+
+        <div id="modalGallery" class="modal-gallery"></div>
+
+        
+        <div class="reaction-buttons">
+
+            <button type="button" id="like-btn">
+            Like <span id="like-count">0</span>
+            </button>
+
+            <button type="button" id="dislike-btn">
+             Dislike <span id="dislike-count">0</span>
+            </button>
+
+        </div>
+
+        <hr>
+
+        <h3>Коментари</h3>
+
+        <form id="comment-form">
+
+            <textarea
+                id="comment-input"
+                placeholder="Напиши коментар..."
+                rows="3"
+                required>
+            </textarea>
+
+            <button type="submit">
+                Објави коментар
+            </button>
+
+        </form>
+
+        <div id="comments-list"></div>
+
+    </div>
+
+</div>
+<section id="survey">
+    <div class="survey-container">
+
+        <h2>Анкета за посетителите</h2>
+        <p>Споделете го вашето мислење за TraveleR!</p>
+
+        <form id="survey-form">
+
+            <label>Име:</label>
+            <input type="text" placeholder="Внесете име" required>
+
+            <label>Возраст:</label>
+            <input type="number" min="1" placeholder="Внесете возраст" required>
+
+            <label>Пол:</label>
+            <input type="radio" name="gender" value="Машки" required> Машки
+            <input type="radio" name="gender" value="Женски"> Женски
+
+            <label>Од која држава доаѓате?</label>
+            <input type="text" placeholder="Внесете држава" required>
+
+            <label>Како го оценувате изгледот на сајтот?</label>
+            <select required>
+                <option value="">Изберете оценка</option>
+                <option>Одличен</option>
+                <option>Многу добар</option>
+                <option>Добар</option>
+                <option>Може да се подобри</option>
+            </select>
+
+            <label>Кој дел најмногу ви се допаѓа?</label>
+            <input type="checkbox" name="favorite" value="Дестинации"> Дестинации
+            <input type="checkbox" name="favorite" value="Галерија"> Галерија
+            <input type="checkbox" name="favorite" value="Водич"> Водич
+            <input type="checkbox" name="favorite" value="Калкулатор"> Калкулатор
+
+            <label>Дали би ја препорачале апликацијата?</label>
+            <select required>
+                <option value="">Изберете одговор</option>
+                <option>Да</option>
+                <option>Не</option>
+                <option>Можеби</option>
+            </select>
+
+            <label>Дополнителни коментари:</label>
+            <textarea rows="4" placeholder="Напишете коментар..."></textarea>
+
+            <button type="submit">Испрати анкета</button>
+
+            <p id="survey-message"></p>
+
+        </form>
+    </div>
+</section>
+
+
+<section id="login">
+
+    <div class="login-box">
+
+        <h2>Најава</h2>
+
+        <form>
+            <label>Корисничко име:</label>
+            <input type="text" placeholder="Внеси корисничко име">
+
+            <label>Лозинка:</label>
+            <input type="password" placeholder="Внеси лозинка">
+
+            <button type="submit">Најави се</button>
+        </form>
+
+    </div>
+
+</section>
+
+
+
+
+<footer>
+    <div class="footer-content">
+
+        <h3>Travel Planner</h3>
+
+        <p>
+            Откривај нови дестинации, планирај патувања
+            и создавај незаборавни спомени.
+        </p>
+
+        <div class="footer-links">
+            <a href="#destinations">Дестинации</a>
+            <a href="#login">Најава</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 TraveleR. Сите права се задржани.
+        </p>
+
+    </div>
+</footer>
+<script src="proekt.js"></script>
+</body>
+</html>
